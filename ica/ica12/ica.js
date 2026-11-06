@@ -11,7 +11,7 @@
 - Notice when you refresh that a quote isn't displayed. Fix that.*/
 
 
-//new quote button
+//quote button
 const newQuoteButton = document.querySelector("#js-new-quote");
 
 // API endpoint
@@ -20,12 +20,7 @@ const endpoint = "https://trivia.cyberwisp.com/getrandomchristmasquestion";
 // Function declaration
 function getQuote() {
     console.log("Button clicked!");
-}
 
-// Event listener
-newQuoteButton.addEventListener("click", getQuote);
-
-function getQuote() {
     fetch(endpoint)
         .then(response => {
             if (!response.ok) {
@@ -41,3 +36,6 @@ function getQuote() {
             alert("Unable to get a trivia question. Please try again!");
         });
 }
+
+// Event listener
+newQuoteButton.addEventListener("click", getQuote);
